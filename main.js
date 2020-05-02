@@ -13,9 +13,9 @@ setInterval((async () => {
     
     // Round at 2 decimal bandwidth and convert in Mb/s
     const download = 
-    Math.round(((res.download.bandwidth * 8) / Math.pow(10, 6)) * 100) / 100;
+     Math.round(((res.download.bandwidth * 8) / Math.pow(10, 6)) * 100) / 100;
     const upload =
-    Math.round(((res.upload.bandwidth * 8) / Math.pow(10, 6)) * 100) / 100;
+     Math.round(((res.upload.bandwidth * 8) / Math.pow(10, 6)) * 100) / 100;
     
     // Get packetLoss
     const packetLoss = res.packetLoss;
