@@ -3,6 +3,7 @@ const colors = require('colors');
 const fs = require('fs');
 
 const time = 60 * Math.pow(10, 3);
+const minCo = 150;
  
 setInterval((async () => {
 
@@ -23,14 +24,14 @@ setInterval((async () => {
     if (packetLoss > 2) {
       fs.appendFileSync('packet-error.txt', `You have ${packetLoss} packetloss !!!\n`); 
     }
-    if (download < 150) { 
+    if (download < minCo) { 
       fs.appendFileSync('connectionError.txt', `You have ${download} MB/s is so LOW !!\n`)
     }
     
     // Display CLI informations
     console.log(`
-      DL: ${download < 150 ? colors.red(download) : colors.green(download)}
-      UP: ${upload < 150 ? colors.red(upload) : colors.green(upload)}
+      DL: ${download < minCo ? colors.red(download) : colors.green(download)}
+      UP: ${upload < minCo ? colors.red(upload) : colors.green(upload)}
       PL: ${packetLoss == undefined ? colors.green(0) : packetLoss > 2 ? colors.red(packetLoss) : colors.green(packetLoss)}
       --------------------------------------------------------------------
     `);
