@@ -1,0 +1,17 @@
+{
+  "name": "testco",
+  "version": "1.0.0",
+  "description": "This a test of network connection",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon main.js"
+  },
+  "author": "Florian Beaumont",
+  "license": "ISC",
+  "acceptLicense": "true",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "nodemon": "^2.0.3",
+    "speedtest-net": "^2.1.1"
+  }
+}
